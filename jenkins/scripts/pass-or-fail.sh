@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # make a random chance of the test passing or failing to simulate developers
 

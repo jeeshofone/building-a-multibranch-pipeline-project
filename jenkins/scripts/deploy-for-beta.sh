@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 echo "deploy steps for beta go here"
 sleep 5
