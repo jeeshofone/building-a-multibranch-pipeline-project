@@ -10,3 +10,4 @@ if $passorfail > 0 ; then
 else
 	echo "tests have passed!!"
 	exit 0
+fi
