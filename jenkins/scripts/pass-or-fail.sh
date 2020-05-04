@@ -4,7 +4,7 @@
 
 passorfail=$(( RANDOM % 2))
 
-if $passorfail > 0 ; then
+if [[ $passorfail > 0 ]]; then
 	echo "tests have failed"
 	exit 1
 else
