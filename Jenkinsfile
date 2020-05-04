@@ -3,16 +3,16 @@ pipeline {
     stages {
         stage('Build') {
             when {
-                not { branch 'production' || 'beta' }}
-            }
+                not { branch 'production' || 'beta' }
+                }
             steps {
                 sh 'echo "Entering the build step!"'
             }
         }
         stage('build and tag docker images ') {
             when {
-                not { branch 'production' || 'beta' }}
-            }
+                not { branch 'production' || 'beta' }
+                }
             steps {
                 sh 'echo "building docker images now - not necessary more than once per tag"'
                 sh 'echo "now tagging docker images using epoch or git commit"'
@@ -20,7 +20,8 @@ pipeline {
         }
         stage('Test') {
             when {
-                not { branch 'production' || 'beta' }}
+                not { branch 'production' || 'beta' }
+                }
             steps {
                 sh 'echo "testing testing testing"'
                 sh 'echo "docker images tested"'
@@ -45,7 +46,7 @@ pipeline {
         }
         stage('Deploy for production') {
             when {
-                branch 'beta'
+                branch 'production'
             }
             steps {
                 sh './jenkins/scripts/deploy-for-production.sh'
