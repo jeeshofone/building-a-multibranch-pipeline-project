@@ -49,6 +49,15 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deploy-for-alpha.sh'
+                sh './jenkins/scripts/do-the-extra-step-for-feature.sh'
+            }
+        }
+        stage('Deploy for alpha2') {
+            when {
+                branch 'alpha2'
+            }
+            steps {
+                sh './jenkins/scripts/deploy-for-alpha2.sh'
             }
         }
         stage('Deploy for beta') {
@@ -57,6 +66,7 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deploy-for-beta.sh'
+                sh './jenkins/scripts/do-the-extra-step-for-feature.sh'
             }
         }
         stage('Deploy for production') {
@@ -65,6 +75,7 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deploy-for-production.sh'
+                sh './jenkins/scripts/do-the-extra-step-for-feature.sh'
             }
         }
     }
